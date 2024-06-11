@@ -8,21 +8,18 @@
     "type": "git",
     "url": "git://github.com/hitsujiwool/bvh.git"
   },
+  "type": "module",
   "main": "./lib/index",
   "scripts": {
     "test": "make test"
   },
-  "dependencies": {
-    "xmlhttprequest": "*"
-  },
   "devDependencies": {
     "browserbuild": "*",
-    "connect": "1.x",
-    "uglify-js": "*",
+    "express": "^4.19.2",
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "uglify-js": "*"
   },
-  "optionalDependencies": {},
   "engines": {
     "node": "*"
   }
