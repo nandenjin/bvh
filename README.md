@@ -1,5 +1,10 @@
 # BVH Parser written in JavaScript
 
+![Version](https://img.shields.io/github/package-json/v/nandenjin/bvh?style=flat-square)
+[![Coverage by Codecov](https://img.shields.io/codecov/c/github/nandenjin/bvh?style=flat-square&logo=codecov)](https://app.codecov.io/gh/nandenjin/bvh/)
+[![License](https://img.shields.io/github/license/nandenjin/bvh?style=flat-square)](/LICENSE)
+
+
 ## Usage
 
 ```javascript
