@@ -21,3 +21,6 @@ export function parse(str: string): BVH {
   const lines = str.replace("\r", "").split("\n");
   return new BVH(new Parser(lines).parse());
 }
+
+export { BVH, Parser };
+export { BVHNode } from "./bvh_node";
