@@ -9,7 +9,7 @@
     "url": "git://github.com/hitsujiwool/bvh.git"
   },
   "type": "module",
-  "main": "./lib/index",
+  "main": "./dist/bvh.js",
   "scripts": {
     "test": "vitest run",
     "dev": "vitest"
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/node": "^20.14.2",
     "express": "^4.19.2",
+    "vite": "^5.2.13",
     "vitest": "^1.6.0"
   },
   "engines": {
