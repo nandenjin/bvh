@@ -1,5 +1,6 @@
-import { resolve } from "path";
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
+import { resolve } from "path";
 
 export default defineConfig({
   build: {
@@ -8,6 +9,13 @@ export default defineConfig({
       entry: resolve(__dirname, "lib/index.ts"),
       name: "bvh",
       fileName: "bvh",
+    },
+  },
+
+  test: {
+    coverage: {
+      provider: "istanbul",
+      reporter: ["json"],
     },
   },
 });
