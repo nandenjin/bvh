@@ -1,7 +1,10 @@
-import Parser from "./parser.js";
-import BVH from "./bvh.js";
+import { Parser } from "./parser";
+import { BVH } from "./bvh";
 
-export async function read(url, callback) {
+export async function read(
+  url: string,
+  callback: (bvh: BVH) => void
+): Promise<void> {
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -14,7 +17,7 @@ export async function read(url, callback) {
   }
 }
 
-export function parse(str) {
+export function parse(str: string): BVH {
   const lines = str.replace("\r", "").split("\n");
   return new BVH(new Parser(lines).parse());
 }
