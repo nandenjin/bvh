@@ -1,12 +1,12 @@
 {
-  "author": "hitsujiwool <utatanenohibi@gmail.com>",
-  "name": "bvh",
+  "author": "Kazumi Inada <hello@nandenjin.com> and hitsujiwool <utatanenohibi@gmail.com>",
+  "name": "@nandenjin/bvh",
   "description": "BVH Parser written in JavaScript",
   "version": "0.0.0",
-  "homepage": "https://github.com/hitsujiwool/bvh",
+  "homepage": "https://github.com/nandenjin/bvh",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hitsujiwool/bvh.git"
+    "url": "git://github.com/nandenjin/bvh.git"
   },
   "type": "module",
   "main": "./dist/bvh.js",
@@ -15,7 +15,8 @@
     "test": "vitest run",
     "dev": "vitest",
     "build": "vite build",
-    "docs": "typedoc --out docs lib"
+    "docs": "typedoc --out docs lib",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
