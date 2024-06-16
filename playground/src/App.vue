@@ -14,7 +14,7 @@
       </div>
       <div>👋 Drag & drop to try with your file</div>
 
-      <Viewer v-if="content" :content="content" />
+      <Viewer v-if="content && !isDragging" :content="content" />
       <div class="drop-target" :class="{ 'is-dragging': isDragging }"></div>
     </div>
   </div>
@@ -41,8 +41,7 @@ const handleDrop = (files: FileList) => {
 </script>
 
 <style scoped>
-.app-root,
-.drop-target {
+.app-root {
   width: 100%;
   height: 100%;
   margin: 0;
