@@ -15,11 +15,14 @@
     "test": "vitest run",
     "dev": "vitest",
     "build": "vite build",
-    "docs": "typedoc --out docs lib",
+    "playground:dev": "vite --config playground/vite.config.js",
+    "playground:build": "vite build --config playground/vite.config.js",
+    "docs": "typedoc --out docs lib/index.ts --excludeExternals ",
     "format": "prettier --write ."
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
+    "@vitejs/plugin-vue": "^5.0.5",
     "@vitest/coverage-istanbul": "^1.6.0",
     "express": "^4.19.2",
     "lint-staged": "^15.2.7",
@@ -27,7 +30,8 @@
     "simple-git-hooks": "^2.11.1",
     "typedoc": "^0.25.13",
     "vite": "^5.2.13",
-    "vitest": "^1.6.0"
+    "vitest": "^1.6.0",
+    "vue": "^3.4.29"
   },
   "engines": {
     "node": "*"
@@ -36,6 +40,6 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*.{js,ts,md,json,yaml}": "prettier --write"
+    "*.{js,ts,md,json,yaml,html}": "prettier --write"
   }
 }

@@ -7,7 +7,7 @@ import { readFileSync } from 'fs'
 import { describe, expect, test } from 'vitest'
 
 const app = express()
-app.use(express.static(import.meta.dirname))
+app.use(express.static(__dirname))
 app.listen(8383)
 
 describe('bvh.js', function () {
@@ -19,10 +19,7 @@ describe('bvh.js', function () {
 })
 
 describe('BVH', function () {
-  const str = readFileSync(
-    import.meta.dirname + '/fixtures/A_test.bvh',
-    'utf-8',
-  )
+  const str = readFileSync(__dirname + '/fixtures/A_test.bvh', 'utf-8')
   const motion = bvh.parse(str)
 
   test('should be instance of BVH', function () {
