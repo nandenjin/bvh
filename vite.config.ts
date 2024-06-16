@@ -16,6 +16,7 @@ export default defineConfig({
     coverage: {
       provider: 'istanbul',
       reporter: ['json'],
+      exclude: ['playground'],
     },
   },
 })
