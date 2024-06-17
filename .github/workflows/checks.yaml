@@ -5,8 +5,29 @@ on:
   pull_request:
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: [parser, playground]
+    defaults:
+      run:
+        working-directory: packages/${{ matrix.package }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: [parser]
+    defaults:
+      run:
+        working-directory: packages/${{ matrix.package }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -18,4 +39,5 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           files: ./coverage/coverage-final.json
+          flags: package--${{ matrix.package }}
           token: ${{ secrets.CODECOV_TOKEN }}

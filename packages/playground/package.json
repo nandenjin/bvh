@@ -1,16 +1,13 @@
 {
-  "name": "@nandenjin/bvh",
-  "workspaces": [
-    "packages/*"
-  ],
+  "name": "@nandenjin/bvh-playground",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
-  "version": "0.0.0",
-  "description": "Toolkit for BVH motion data",
-  "main": "index.js",
+  "description": "Playground for BVH parser",
+  "main": "index.html",
   "scripts": {
-    "docs": "typedoc",
-    "format": "prettier --write ."
+    "dev": "vite",
+    "build": "vite build "
   },
   "repository": {
     "type": "git",
@@ -22,9 +19,11 @@
     "url": "https://github.com/nandenjin/bvh/issues"
   },
   "homepage": "https://github.com/nandenjin/bvh#readme",
+  "dependencies": {
+    "vue": "3.4.29"
+  },
   "devDependencies": {
-    "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2",
-    "simple-git-hooks": "^2.11.1"
+    "vite": "5.2.13",
+    "@vitejs/plugin-vue": "5.0.5"
   }
 }

@@ -13,10 +13,11 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm run docs
-      - run: npm run playground:build
+      - run: npm run build
+        working-directory: packages/playground
         env:
           PLAYGROUND_BASE_PATH: /bvh/playground/
-      - run: mkdir docs/playground && cp -r playground/dist/* docs/playground
+      - run: mkdir docs/playground && cp -r packages/playground/dist/* docs/playground
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs

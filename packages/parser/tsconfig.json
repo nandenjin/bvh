@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "module": "Preserve",
-    "moduleResolution": "Bundler",
     "isolatedModules": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "module": "Preserve",
+    "moduleResolution": "bundler"
   },
   "include": ["**/*.ts", "**/*.vue"]
 }

@@ -1,0 +1,5 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./packages/parser/lib/index.ts"],
+  "out": "./docs"
+}
