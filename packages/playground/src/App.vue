@@ -23,7 +23,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Viewer from './Viewer.vue'
-import EXAMPLE_BVH_A from '../../test/fixtures/A_test.bvh?raw'
+
+import EXAMPLE_BVH_A from '@nandenjin/bvh-parser/test/fixtures/A_test.bvh?raw'
 
 const isDragging = ref(false)
 const content = ref<string>(EXAMPLE_BVH_A)
