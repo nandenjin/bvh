@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
-import { type BVH, parse } from '@nandenjin/bvh-parser'
+import { type BVH, parse } from '@nandenjin/bvh-parser/lib'
 import ViewerNode from './ViewerNode.vue'
 const props = defineProps<{
   content: string

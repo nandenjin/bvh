@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import type { BVHNode } from '@nandenjin/bvh-parser'
+import type { BVHNode } from '@nandenjin/bvh-parser/lib'
 
 const { node } = defineProps<{
   node: BVHNode
