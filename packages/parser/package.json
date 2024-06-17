@@ -12,7 +12,6 @@
   "main": "./dist/bvh.js",
   "types": "./lib/index.ts",
   "scripts": {
-    "postinstall": "simple-git-hooks",
     "test": "vitest run",
     "dev": "vitest",
     "build": "vite build"
@@ -27,11 +26,5 @@
   },
   "engines": {
     "node": "*"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,ts,md,json,yaml,html}": "prettier --write"
   }
 }

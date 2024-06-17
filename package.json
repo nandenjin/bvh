@@ -9,6 +9,7 @@
   "description": "Toolkit for BVH motion data",
   "main": "index.js",
   "scripts": {
+    "postinstall": "simple-git-hooks",
     "docs": "typedoc",
     "format": "prettier --write ."
   },
@@ -26,5 +27,11 @@
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
     "simple-git-hooks": "^2.11.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,md,json,yaml,html}": "prettier --write"
   }
 }
