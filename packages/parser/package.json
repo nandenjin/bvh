@@ -10,7 +10,7 @@
   },
   "type": "module",
   "main": "./dist/bvh.js",
-  "types": "./lib/index.ts",
+  "types": "./dist/lib/index.ts",
   "scripts": {
     "test": "vitest run",
     "dev": "vitest",
@@ -22,6 +22,7 @@
     "express": "^4.19.2",
     "typedoc": "^0.25.13",
     "vite": "^5.2.13",
+    "vite-plugin-dts": "^3.9.1",
     "vitest": "^1.6.0"
   },
   "engines": {
