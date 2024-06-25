@@ -1,5 +1,8 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["./packages/parser/lib/index.ts"],
+  "entryPoints": [
+    "./packages/parser/lib/index.ts",
+    "./packages/three-bvh/src/index.ts"
+  ],
   "out": "./docs"
 }
