@@ -20,10 +20,13 @@
   },
   "homepage": "https://github.com/nandenjin/bvh#readme",
   "dependencies": {
+    "@vueuse/core": "^10.11.0",
+    "three": "^0.165.0",
     "vue": "3.4.29"
   },
   "devDependencies": {
-    "vite": "5.2.13",
-    "@vitejs/plugin-vue": "5.0.5"
+    "@types/three": "^0.165.0",
+    "@vitejs/plugin-vue": "5.0.5",
+    "vite": "5.2.13"
   }
 }

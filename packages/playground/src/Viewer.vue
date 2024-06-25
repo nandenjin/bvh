@@ -9,29 +9,11 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
-import { type BVH, parse } from '@nandenjin/bvh-parser/lib'
+import { type BVH } from '@nandenjin/bvh-parser/lib'
 import ViewerNode from './ViewerNode.vue'
-const props = defineProps<{
-  content: string
+const { bvh } = defineProps<{
+  bvh?: BVH
 }>()
-const bvh = ref<BVH>()
-
-const readContent = (content: string) => {
-  bvh.value = parse(content)
-  console.info(bvh.value)
-}
-
-watch(
-  () => props.content,
-  (content) => {
-    readContent(content)
-  },
-)
-
-onMounted(() => {
-  readContent(props.content)
-})
 </script>
 
 <style scoped>

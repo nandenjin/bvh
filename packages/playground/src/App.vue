@@ -14,20 +14,30 @@
       </div>
       <div>👋 Drag & drop to try with your file</div>
 
-      <Viewer v-if="content && !isDragging" :content="content" />
+      <Viewer v-if="content && !isDragging" :bvh="bvh" />
       <div class="drop-target" :class="{ 'is-dragging': isDragging }"></div>
+    </div>
+    <div class="preview">
+      <Preview :bvh="bvh" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import Viewer from './Viewer.vue'
 
 import EXAMPLE_BVH_A from '@nandenjin/bvh-parser/test/fixtures/A_test.bvh?raw'
+import Preview from './Preview.vue'
+import { BVH, parse } from '@nandenjin/bvh-parser/lib'
 
 const isDragging = ref(false)
 const content = ref<string>(EXAMPLE_BVH_A)
+
+const bvh = computed<BVH | undefined>(() => {
+  if (!content.value) return
+  return parse(content.value)
+})
 
 const handleDrop = (files: FileList) => {
   if (!files) return
@@ -46,6 +56,9 @@ const handleDrop = (files: FileList) => {
   width: 100%;
   height: 100%;
   margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 .drop-target {
   position: fixed;
@@ -62,5 +75,11 @@ const handleDrop = (files: FileList) => {
 
 .content {
   margin: 10px;
+}
+
+.preview {
+  background-color: #888;
+  width: 100%;
+  height: 100%;
 }
 </style>

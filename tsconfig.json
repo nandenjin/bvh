@@ -3,5 +3,7 @@
     "esModuleInterop": true,
     "module": "Preserve",
     "moduleResolution": "Bundler"
-  }
+  },
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts"]
 }

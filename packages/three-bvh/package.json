@@ -1,0 +1,15 @@
+{
+  "name": "@nandenjin/three-bvh",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kazumi Inada<hello@nandenjin.com>",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@types/three": "^0.165.0"
+  }
+}
