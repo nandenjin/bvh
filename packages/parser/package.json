@@ -6,7 +6,8 @@
   "homepage": "https://github.com/nandenjin/bvh",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nandenjin/bvh.git"
+    "url": "git://github.com/nandenjin/bvh.git",
+    "directory": "packages/parser"
   },
   "type": "module",
   "main": "./dist/bvh.js",

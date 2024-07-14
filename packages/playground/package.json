@@ -11,7 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nandenjin/bvh.git"
+    "url": "git+https://github.com/nandenjin/bvh.git",
+    "directory": "packages/playground"
   },
   "author": "Kazumi Inada <hello@nandenjin.com>",
   "license": "MIT",

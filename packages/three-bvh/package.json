@@ -8,6 +8,11 @@
   "keywords": [],
   "author": "Kazumi Inada<hello@nandenjin.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nandenjin/bvh.git",
+    "directory": "packages/three-bvh"
+  },
   "description": "",
   "devDependencies": {
     "@types/three": "^0.165.0"
