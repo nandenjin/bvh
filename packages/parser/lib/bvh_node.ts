@@ -39,6 +39,16 @@ export class BVHNode {
     }
     return this.frames[nthFrame][index]
   }
+  flatten(): BVHNode[] {
+    const iter = (node: BVHNode): BVHNode[] => {
+      let tmp: BVHNode[] = [node]
+      for (let i = 0, len = node.children.length; i < len; i++) {
+        tmp = tmp.concat(iter(node.children[i]))
+      }
+      return tmp
+    }
+    return iter(this)
+  }
 
   toString(): string {
     const iter = (node: BVHNode, indent: string): string[] => {
