@@ -16,7 +16,7 @@
     "test": "vitest run",
     "dev": "vitest",
     "build": "vite build",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
