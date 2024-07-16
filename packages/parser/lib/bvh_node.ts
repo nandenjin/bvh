@@ -25,27 +25,19 @@ export class BVHNode {
     this.currentFrame = 0
   }
 
-  at(nthFrame: number): BVHNode {
-    const that = this
-    nthFrame = nthFrame | 0
-    this.currentFrame = nthFrame
-    const frame = this.frames[nthFrame - 1]
-    this.channels?.forEach(function (channel, i) {
-      const prop = channel.slice(1) + channel.slice(0, 1).toUpperCase()
-      that[prop] = frame[i]
-    })
-    return this
-  }
-
-  flatten(): BVHNode[] {
-    const iter = (node: BVHNode): BVHNode[] => {
-      let tmp: BVHNode[] = [node]
-      for (let i = 0, len = node.children.length; i < len; i++) {
-        tmp = tmp.concat(iter(node.children[i]))
-      }
-      return tmp
+  /**
+   * Get value of the channel at the current frame
+   * @param nthFrame Index of frame
+   * @param channel Name of channel
+   * @returns Value of the channel
+   * @example node.at(0, 'Xposition')
+   */
+  at(nthFrame: number, channel: string) {
+    const index = this.channels!.indexOf(channel)
+    if (index === -1) {
+      throw new Error(`Channel ${channel} not found in node ${this.id}`)
     }
-    return iter(this)
+    return this.frames[nthFrame][index]
   }
 
   toString(): string {
