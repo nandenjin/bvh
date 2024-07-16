@@ -34,14 +34,6 @@ export class BVH {
     this._nodeIndex = iter(this.root, {})
   }
 
-  at(nthFrame: number): BVH {
-    nthFrame = nthFrame | 0
-    for (let prop in this._nodeIndex) {
-      this._nodeIndex[prop].at(nthFrame)
-    }
-    return this
-  }
-
   of(id: string): BVHNode | undefined {
     return this._nodeIndex[id]
   }
