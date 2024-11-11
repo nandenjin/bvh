@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2](https://github.com/nandenjin/bvh/compare/bvh-parser-v0.1.1...bvh-parser-v0.1.2) (2024-11-11)
+
+
+### Bug Fixes
+
+* Invalid `exports` and `types` in `parser` ([82a6101](https://github.com/nandenjin/bvh/commit/82a6101a157eb08525e23cd3d1f471230ee47c97))
+* Invalid format in `exports` field ([29181ff](https://github.com/nandenjin/bvh/commit/29181ffa60fd20aa16c713a44e3e180ae7b5ec11))
+
 ## [0.1.1](https://github.com/nandenjin/bvh/compare/bvh-parser-v0.1.0...bvh-parser-v0.1.1) (2024-07-16)
 
 

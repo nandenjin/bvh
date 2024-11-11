@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.1...three-bvh-v0.2.2) (2024-11-11)
+
+
+### Bug Fixes
+
+* Invalid export field in `three-bvh` ([637d469](https://github.com/nandenjin/bvh/commit/637d4696c9a1833a97459e174dcf51a54fcf86e8))
+* Invalid format in `exports` field ([29181ff](https://github.com/nandenjin/bvh/commit/29181ffa60fd20aa16c713a44e3e180ae7b5ec11))
+
 ## [0.2.1](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.0...three-bvh-v0.2.1) (2024-11-11)
 
 
