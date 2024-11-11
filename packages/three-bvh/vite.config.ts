@@ -9,8 +9,16 @@ export default defineConfig({
     target: 'modules',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'three-bvh',
+      name: 'threeBvh',
       fileName: 'three-bvh',
+    },
+    rollupOptions: {
+      external: ['three'],
+      output: {
+        globals: {
+          three: 'THREE',
+        },
+      },
     },
   },
 })

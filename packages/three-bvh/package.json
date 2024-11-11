@@ -1,8 +1,9 @@
 {
   "name": "@nandenjin/three-bvh",
   "version": "0.2.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": "./dist/three-bvh.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "vite build",
     "prepublishOnly": "npm run build"
