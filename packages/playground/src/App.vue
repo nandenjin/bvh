@@ -29,7 +29,7 @@ import Viewer from './Viewer.vue'
 
 import EXAMPLE_BVH_A from '@nandenjin/bvh-parser/test/fixtures/A_test.bvh?raw'
 import Preview from './Preview.vue'
-import { BVH, parse } from '@nandenjin/bvh-parser/lib'
+import { BVH, parse } from '@nandenjin/bvh-parser'
 
 const isDragging = ref(false)
 const content = ref<string>(EXAMPLE_BVH_A)

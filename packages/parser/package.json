@@ -10,7 +10,10 @@
     "directory": "packages/parser"
   },
   "type": "module",
-  "exports": "./dist/bvh.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./test/*": "./test/*"
+  },
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "vitest run",

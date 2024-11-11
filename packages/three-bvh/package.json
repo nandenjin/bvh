@@ -2,7 +2,9 @@
   "name": "@nandenjin/three-bvh",
   "version": "0.2.1",
   "type": "module",
-  "exports": "./dist/three-bvh.mjs",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "vite build",

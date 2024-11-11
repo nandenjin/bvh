@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { type BVH } from '@nandenjin/bvh-parser/lib'
+import { type BVH } from '@nandenjin/bvh-parser'
 import ViewerNode from './ViewerNode.vue'
 const { bvh } = defineProps<{
   bvh?: BVH

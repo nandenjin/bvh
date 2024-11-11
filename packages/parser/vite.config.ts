@@ -4,13 +4,17 @@ import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [dts()],
+  plugins: [
+    dts({
+      rollupTypes: true,
+    }),
+  ],
   build: {
     target: 'modules',
     lib: {
       entry: resolve(__dirname, 'lib/index.ts'),
-      name: 'bvh',
-      fileName: 'bvh',
+      formats: ['es'],
+      fileName: 'index',
     },
   },
 

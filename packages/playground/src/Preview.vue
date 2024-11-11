@@ -18,7 +18,7 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { useElementSize } from '@vueuse/core'
 import { BVH } from '@nandenjin/bvh-parser'
-import { createBones, createClip } from '@nandenjin/three-bvh/src'
+import { createBones, createClip } from '@nandenjin/three-bvh'
 
 const props = defineProps<{
   bvh?: BVH
