@@ -25,8 +25,11 @@ export const createBones = (bvh: BVH) => {
   return createByNode(bvh.root)
 }
 
-export const createClip = (bvh: BVH) => {
+export const createClip = (bvh: BVH, frameStart = 0, frameEnd = -1) => {
   const tracks: KeyframeTrack[] = []
+
+  // frameEnd = -1 means the last frame
+  frameEnd = frameEnd === -1 ? bvh.numFrames : frameEnd
 
   for (const node of bvh.nodeList) {
     if (node.hasEnd) continue
@@ -34,7 +37,7 @@ export const createClip = (bvh: BVH) => {
     const times: number[] = []
     const positions: number[] = []
     const rotations: number[] = []
-    for (let i = 0; i < bvh.numFrames; i++) {
+    for (let i = frameStart; i < Math.min(bvh.numFrames, frameEnd); i++) {
       times.push(i * bvh.frameTime)
 
       const position = new Vector3(node.offsetX, node.offsetY, node.offsetZ)
