@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.0...three-bvh-v0.2.1) (2024-11-11)
+
+
+### Bug Fixes
+
+* Definition of peer deps in three-bvh ([dbbec22](https://github.com/nandenjin/bvh/commit/dbbec2256635a7ce65fc10905dde9c41e61e537a))
+
 ## [0.2.0](https://github.com/nandenjin/bvh/compare/three-bvh-v0.1.0...three-bvh-v0.2.0) (2024-11-11)
 
 
