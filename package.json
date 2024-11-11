@@ -11,7 +11,10 @@
   "scripts": {
     "postinstall": "simple-git-hooks",
     "docs": "typedoc",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "run-s prepare:parser prepare:three-bvh",
+    "prepare:parser": "npm -w ./packages/parser run build",
+    "prepare:three-bvh": "npm -w ./packages/three-bvh run build"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,7 @@
   "homepage": "https://github.com/nandenjin/bvh#readme",
   "devDependencies": {
     "lint-staged": "^15.2.7",
+    "npm-run-all2": "^7.0.1",
     "prettier": "^3.3.2",
     "simple-git-hooks": "^2.11.1"
   },

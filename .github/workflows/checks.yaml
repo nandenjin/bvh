@@ -7,21 +7,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        package: [parser, playground]
-    defaults:
-      run:
-        working-directory: packages/${{ matrix.package }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
-        working-directory: .
-      - run: npm run build
+      - name: Install deps and build base packages
+        run: npm ci # This also builds packages/{parser, three-bvh}
+      - name: Build playground
+        run: npm run build
+        working-directory: packages/playground
   test:
     runs-on: ubuntu-latest
     strategy:

@@ -13,9 +13,6 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Build parser
-        run: npm run build
-        working-directory: packages/parser
       - name: Build docs
         run: npm run docs
       - name: Build playground
