@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.2...three-bvh-v0.2.3) (2024-11-11)
+
+
+### Bug Fixes
+
+* Include missing dist dir to published three-bvh ([cab6b99](https://github.com/nandenjin/bvh/commit/cab6b99b1df82a37cb9f232f30ad036e83917af5))
+
 ## [0.2.2](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.1...three-bvh-v0.2.2) (2024-11-11)
 
 
