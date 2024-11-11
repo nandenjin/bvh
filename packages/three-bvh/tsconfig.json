@@ -6,6 +6,5 @@
     "module": "Preserve",
     "moduleResolution": "bundler"
   },
-  "include": ["**/*.ts"],
-  "exclude": ["vite.config.ts"]
+  "include": ["**/*.ts"]
 }
