@@ -1,8 +1,8 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": [
-    "./packages/parser/lib/index.ts",
-    "./packages/three-bvh/src/index.ts"
-  ],
+  "entryPoints": ["./packages/*"],
+  "exclude": ["./packages/playground"],
+  "name": "bvh",
+  "entryPointStrategy": "packages",
   "out": "./docs"
 }
