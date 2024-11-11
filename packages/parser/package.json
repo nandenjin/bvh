@@ -10,8 +10,8 @@
     "directory": "packages/parser"
   },
   "type": "module",
-  "main": "./dist/bvh.js",
-  "types": "./dist/lib/index.ts",
+  "exports": "./dist/bvh.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "vitest run",
     "dev": "vitest",
