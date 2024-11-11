@@ -22,7 +22,7 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "peerDependencies": {
-    "three": "^0.165.0",
+    "three": "*",
     "@nandenjin/bvh-parser": "^0.1.1"
   }
 }
