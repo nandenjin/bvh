@@ -1,12 +1,14 @@
-# BVH Parser written in JavaScript
+# bvh-parser
 
-![Version](https://img.shields.io/github/package-json/v/nandenjin/bvh?style=flat-square)
+BVH Parser written in TypeScript
+
+![Version](https://img.shields.io/github/package-json/v/nandenjin/bvh?filename=packages%2Fparser%2Fpackage.json&style=flat-square)
 [![Coverage by Codecov](https://img.shields.io/codecov/c/github/nandenjin/bvh?style=flat-square&logo=codecov)](https://app.codecov.io/gh/nandenjin/bvh/)
 [![License](https://img.shields.io/github/license/nandenjin/bvh?style=flat-square)](/LICENSE)
 
 This is a forked version maintained by [`@nandenjin`](https://github.com/nandenjin). Originally written by [`@hitsujiwool`](https://github.com/hitsujiwool).
 
-[🐙 **GitHub**](https://github.com/nandenjin/bvh) | [📒 **Docs**](https://nandenjin.github.io/bvh/) | [⚒️ **Playground**](https://nandenjin.github.io/bvh/playground/)
+[🐙 **GitHub**](https://github.com/nandenjin/bvh) | [📒 **Docs**](https://nandenjin.github.io/bvh/modules/_nandenjin_bvh_parser.html) | [⚒️ **Playground**](https://nandenjin.github.io/bvh/playground/)
 
 ## Usage
 
