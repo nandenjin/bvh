@@ -1,6 +1,8 @@
 # bvh
 
-Toolkit for BVH motion data, written in TypeScript
+Toolkit for BVH motion data, written in TypeScript.
+
+💡 Inspired and forked from [`@hitsujiwool/bvh`](https://github.com/hitsujiwool/bvh)
 
 ![Build status](https://img.shields.io/github/actions/workflow/status/nandenjin/bvh/checks.yaml?style=flat-square&label=build)
 ![Docs build status](https://img.shields.io/github/actions/workflow/status/nandenjin/bvh/docs.yaml?style=flat-square&logo=typescript&label=docs%20build)
