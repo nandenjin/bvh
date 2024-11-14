@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/nandenjin/bvh/compare/bvh-parser-v0.1.2...bvh-parser-v0.1.3) (2024-11-14)
+
+
+### Bug Fixes
+
+* Do not include `tsconfig.json` to artifact ([f191e8a](https://github.com/nandenjin/bvh/commit/f191e8a2f9e62bf3a1ac7c92bbfff4fb952701f0))
+
 ## [0.1.2](https://github.com/nandenjin/bvh/compare/bvh-parser-v0.1.1...bvh-parser-v0.1.2) (2024-11-11)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.3...three-bvh-v0.2.4) (2024-11-14)
+
+
+### Bug Fixes
+
+* Do not include `tsconfig.json` to artifact ([f191e8a](https://github.com/nandenjin/bvh/commit/f191e8a2f9e62bf3a1ac7c92bbfff4fb952701f0))
+
 ## [0.2.3](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.2...three-bvh-v0.2.3) (2024-11-11)
 
 
