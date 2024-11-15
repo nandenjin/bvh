@@ -5,6 +5,9 @@
   "automergeType": "branch",
   "labels": ["dependencies"],
   "schedule": ["* * 8,18,28 * *"],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
