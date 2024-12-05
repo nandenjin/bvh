@@ -60,15 +60,16 @@ export class BVHNode {
     }
     return this.frames[nthFrame][index]
   }
+
+  /**
+   * Get flat array of all nodes under this node
+   */
   flatten(): BVHNode[] {
-    const iter = (node: BVHNode): BVHNode[] => {
-      let tmp: BVHNode[] = [node]
-      for (let i = 0, len = node.children.length; i < len; i++) {
-        tmp = tmp.concat(iter(node.children[i]))
-      }
-      return tmp
+    let nodes: BVHNode[] = [this]
+    for (const child of this.children) {
+      nodes = nodes.concat(child.flatten())
     }
-    return iter(this)
+    return nodes
   }
 
   toString(): string {

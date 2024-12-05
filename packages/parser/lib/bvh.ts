@@ -21,29 +21,23 @@ export class BVH {
   private _nodeIndex: { [id: string]: BVHNode }
 
   constructor(parser: Parser) {
-    function iter(
-      node: BVHNode,
-      res: { [id: string]: BVHNode },
-    ): { [id: string]: BVHNode } {
-      if (res[node.id]) {
-        throw new Error(`Error: Node ${node.id} already exists`)
-      }
-      res[node.id] = node
-      for (let i = 0, len = node.children.length; i < len; i++) {
-        iter(node.children[i], res)
-      }
-      return res
-    }
-
     if (parser.currentNode === null) {
-      throw new Error('Error: No root node found')
+      throw new Error('No root node found')
     }
 
     this.root = parser.currentNode
     this.numFrames = parser.numFrames
     this.frameTime = parser.frameTime
     this.nodeList = this.root.flatten()
-    this._nodeIndex = iter(this.root, {})
+
+    for (const node of this.nodeList) {
+      if (node.id === undefined) {
+        throw new Error('Node id is undefined')
+      } else if (this._nodeIndex[node.id] !== undefined) {
+        throw new Error(`Duplicate node id: ${node.id}`)
+      }
+      this._nodeIndex[node.id] = node
+    }
   }
 
   /**
