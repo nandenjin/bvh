@@ -1,10 +1,31 @@
 export class BVHNode {
+  /**
+   * Name of the node
+   * @example 'Hips'
+   */
   id: string
   children: BVHNode[]
   parent: BVHNode | null
+  /**
+   * Raw array of frame values
+   * @example ```ts
+   * const xPosition: number = node.frames[frameIndex][node.channels.indexOf('Xposition')]
+   * ```
+   */
   frames: number[][]
+  /**
+   * List of channels with the order as `frames`
+   * @example ['Xposition', 'Yposition', 'Zposition']
+   */
   channels: string[] | null
+  /**
+   * True if the node is at an end sites
+   */
   hasEnd: boolean
+  /**
+   * Statefull property to keep track of the current frame
+   * @deprecated
+   */
   currentFrame: number
 
   offsetX: number
