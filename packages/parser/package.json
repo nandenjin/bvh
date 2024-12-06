@@ -2,7 +2,7 @@
   "author": "Kazumi Inada <hello@nandenjin.com> and hitsujiwool <utatanenohibi@gmail.com>",
   "name": "@nandenjin/bvh-parser",
   "description": "BVH Parser written in JavaScript",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "license": "MIT",
   "homepage": "https://github.com/nandenjin/bvh",
   "repository": {

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.4...three-bvh-v0.2.5) (2024-12-06)
+
+
+### Bug Fixes
+
+* Update peerDependencies ([2c6dbaf](https://github.com/nandenjin/bvh/commit/2c6dbaf5a38116ed8ba2a1fcbe3d463df9e5ec15))
+
 ## [0.2.4](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.3...three-bvh-v0.2.4) (2024-12-06)
 
 
