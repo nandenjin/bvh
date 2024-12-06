@@ -38,7 +38,7 @@ export function parse(str: string, options: ParseOptions = {}): BVH {
     }
   }
 
-  return
+  return bvh
 }
 
 export { BVH, Parser }

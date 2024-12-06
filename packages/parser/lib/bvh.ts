@@ -18,7 +18,7 @@ export class BVH {
    * List of all nodes in the BVH
    */
   nodeList: BVHNode[]
-  private _nodeIndex: { [id: string]: BVHNode }
+  private _nodeIndex: { [id: string]: BVHNode } = {}
 
   constructor(parser: Parser) {
     if (parser.currentNode === null) {
