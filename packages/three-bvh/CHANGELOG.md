@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.4](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.3...three-bvh-v0.2.4) (2024-12-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency three to ^0.170.0 ([3b88921](https://github.com/nandenjin/bvh/commit/3b88921b321058679c7e231df4ee283be8e3280e))
+* Do not include `tsconfig.json` to artifact ([f191e8a](https://github.com/nandenjin/bvh/commit/f191e8a2f9e62bf3a1ac7c92bbfff4fb952701f0))
+
 ## [0.2.3](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.2...three-bvh-v0.2.3) (2024-11-11)
 
 
