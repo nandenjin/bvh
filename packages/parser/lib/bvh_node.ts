@@ -54,11 +54,26 @@ export class BVHNode {
    * @example node.at(0, 'Xposition')
    */
   at(nthFrame: number, channel: string) {
-    const index = this.channels!.indexOf(channel)
+    const index = this.channels.indexOf(channel)
     if (index === -1) {
       throw new Error(`Channel ${channel} not found in node ${this.id}`)
     }
     return this.frames[nthFrame][index]
+  }
+
+  /**
+   * Set value of the channel at the current frame
+   * @param nthFrame Index of frame
+   * @param channel Name of channel
+   * @param value Value to set
+   * @example node.set(0, 'Xposition', 0)
+   */
+  set(nthFrame: number, channel: string, value: number) {
+    const index = this.channels.indexOf(channel)
+    if (index === -1) {
+      throw new Error(`Channel ${channel} not found in node ${this.id}`)
+    }
+    this.frames[nthFrame][index] = value
   }
 
   /**
