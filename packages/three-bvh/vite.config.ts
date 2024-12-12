@@ -21,4 +21,11 @@ export default defineConfig({
       },
     },
   },
+  test: {
+    coverage: {
+      provider: 'istanbul',
+      reporter: ['json'],
+      exclude: ['playground'],
+    },
+  },
 })

@@ -6,5 +6,5 @@
     "module": "Preserve",
     "moduleResolution": "bundler"
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "**/*.test.ts"]
 }

@@ -20,7 +20,11 @@ export class BVH {
   nodeList: BVHNode[]
   private _nodeIndex: { [id: string]: BVHNode } = {}
 
-  constructor(parser: Parser) {
+  constructor(parser?: Parser) {
+    if (parser === undefined) {
+      return
+    }
+
     if (parser.currentNode === null) {
       throw new Error('No root node found')
     }
