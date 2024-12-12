@@ -7,10 +7,25 @@ import {
   VectorKeyframeTrack,
 } from 'three'
 
+/**
+ * Returns the end frame of the BVH animation.
+ *
+ * @param {BVH} bvh - The BVH object containing the animation data.
+ * @param {number} frameEnd - The specified end frame. If -1, the total number of frames in the BVH is returned.
+ * @returns {number} - The end frame of the BVH animation.
+ */
 export const getFrameEnd = (bvh: BVH, frameEnd: number): number => {
   return frameEnd === -1 ? bvh.numFrames : frameEnd
 }
 
+/**
+ * Processes a single frame of the BVH animation.
+ *
+ * @param {BVHNode} node - The BVH node containing the frame data.
+ * @param {number} frameIndex - The index of the frame to process.
+ * @param {number} frameTime - The time duration of each frame.
+ * @returns {{ times: number[]; positions: number[]; rotations: number[] }} - An object containing arrays of times, positions, and rotations for the frame.
+ */
 export const processFrame = (
   node: BVHNode,
   frameIndex: number,
@@ -67,6 +82,15 @@ export const processFrame = (
   return { times, positions, rotations }
 }
 
+/**
+ * Processes a BVH node to generate animation tracks.
+ *
+ * @param {BVHNode} node - The BVH node to process.
+ * @param {number} frameStart - The starting frame index.
+ * @param {number} frameEnd - The ending frame index.
+ * @param {number} frameTime - The time duration of each frame.
+ * @returns {KeyframeTrack[]} - An array of keyframe tracks for the node.
+ */
 export const processNode = (
   node: BVHNode,
   frameStart: number,
