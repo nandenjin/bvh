@@ -1,5 +1,6 @@
 import { BVH, BVHNode } from '@nandenjin/bvh-parser'
 import {
+  Euler,
   KeyframeTrack,
   Quaternion,
   QuaternionKeyframeTrack,
@@ -39,45 +40,16 @@ export const processFrame = (
 
   const position = new Vector3(node.offsetX, node.offsetY, node.offsetZ)
   const rotation = new Quaternion()
-  const quat = new Quaternion()
 
-  for (let j = 0; j < node.channels.length; j++) {
-    const channel = node.channels[j]
-    switch (channel) {
-      case 'Xposition':
-        position.x += node.frames[frameIndex][j]
-        break
-      case 'Yposition':
-        position.y += node.frames[frameIndex][j]
-        break
-      case 'Zposition':
-        position.z += node.frames[frameIndex][j]
-        break
-      case 'Xrotation':
-        quat.setFromAxisAngle(
-          new Vector3(1, 0, 0),
-          (node.frames[frameIndex][j] * Math.PI) / 180,
-        )
-        rotation.multiply(quat)
-        break
-      case 'Yrotation':
-        quat.setFromAxisAngle(
-          new Vector3(0, 1, 0),
-          (node.frames[frameIndex][j] * Math.PI) / 180,
-        )
-        rotation.multiply(quat)
-        break
-      case 'Zrotation':
-        quat.setFromAxisAngle(
-          new Vector3(0, 0, 1),
-          (node.frames[frameIndex][j] * Math.PI) / 180,
-        )
-        rotation.multiply(quat)
-        break
-      default:
-        throw new Error(`Invalid channel on node ${node.id}: ${channel}`)
-    }
-  }
+  const xPosition = node.at(frameIndex, 'Xposition')
+  const yPosition = node.at(frameIndex, 'Yposition')
+  const zPosition = node.at(frameIndex, 'Zposition')
+  position.add(new Vector3(xPosition, yPosition, zPosition))
+
+  const xRotation = node.at(frameIndex, 'Xrotation')
+  const yRotation = node.at(frameIndex, 'Yrotation')
+  const zRotation = node.at(frameIndex, 'Zrotation')
+  rotation.setFromEuler(new Euler(xRotation, yRotation, zRotation, 'XYZ'))
 
   positions.push(position.x, position.y, position.z)
   rotations.push(rotation.x, rotation.y, rotation.z, rotation.w)
