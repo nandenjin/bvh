@@ -2,7 +2,6 @@ import { describe, expect, test } from 'vitest'
 import { createBones, createClip } from '../src'
 import { getFrameEnd, processFrame, processNode } from '../src/processors'
 import { BVH, BVHNode } from '@nandenjin/bvh-parser'
-import { Vector3, Quaternion } from 'three'
 
 const createTestBVH = () => {
   const node = new BVHNode('Hips')
