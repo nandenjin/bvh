@@ -42,7 +42,8 @@ export const processFrame = (
   const quat = new Quaternion()
 
   for (let j = 0; j < node.channels.length; j++) {
-    switch (node.channels[j]) {
+    const channel = node.channels[j]
+    switch (channel) {
       case 'Xposition':
         position.x += node.frames[frameIndex][j]
         break
@@ -73,6 +74,8 @@ export const processFrame = (
         )
         rotation.multiply(quat)
         break
+      default:
+        throw new Error(`Invalid channel on node ${node.id}: ${channel}`)
     }
   }
 
