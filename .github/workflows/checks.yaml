@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package: [parser]
+        package: [parser, three-bvh]
     defaults:
       run:
         working-directory: packages/${{ matrix.package }}
