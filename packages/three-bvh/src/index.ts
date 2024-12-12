@@ -6,6 +6,7 @@ import {
   VectorKeyframeTrack,
   Quaternion,
   Vector3,
+  Euler,
 } from 'three'
 
 export const createBones = (bvh: BVH) => {
@@ -42,7 +43,7 @@ export const createClip = (bvh: BVH, frameStart = 0, frameEnd = -1) => {
 
       const position = new Vector3(node.offsetX, node.offsetY, node.offsetZ)
       const rotation = new Quaternion()
-      const quat = new Quaternion()
+      const euler = new Euler()
 
       for (let j = 0; j < node.channels.length; j++) {
         switch (node.channels[j]) {
@@ -56,30 +57,20 @@ export const createClip = (bvh: BVH, frameStart = 0, frameEnd = -1) => {
             position.z += node.frames[i][j]
             break
           case 'Xrotation':
-            quat.setFromAxisAngle(
-              new Vector3(1, 0, 0),
-              (node.frames[i][j] * Math.PI) / 180,
-            )
-            rotation.multiply(quat)
+            euler.x = (node.frames[i][j] * Math.PI) / 180
             break
           case 'Yrotation':
-            quat.setFromAxisAngle(
-              new Vector3(0, 1, 0),
-              (node.frames[i][j] * Math.PI) / 180,
-            )
-            rotation.multiply(quat)
+            euler.y = (node.frames[i][j] * Math.PI) / 180
             break
           case 'Zrotation':
-            quat.setFromAxisAngle(
-              new Vector3(0, 0, 1),
-              (node.frames[i][j] * Math.PI) / 180,
-            )
-            rotation.multiply(quat)
+            euler.z = (node.frames[i][j] * Math.PI) / 180
             break
           default:
             throw new Error('Error: Invalid channel')
         }
       }
+
+      rotation.setFromEuler(euler)
 
       positions.push(position.x, position.y, position.z)
       rotations.push(rotation.x, rotation.y, rotation.z, rotation.w)
@@ -100,4 +91,24 @@ export const createClip = (bvh: BVH, frameStart = 0, frameEnd = -1) => {
   }
 
   return new AnimationClip(undefined, bvh.numFrames * bvh.frameTime, tracks)
+}
+
+export const getRotation = (node: BVHNode, frame: number): Quaternion => {
+  const euler = new Euler()
+  for (let j = 0; j < node.channels.length; j++) {
+    switch (node.channels[j]) {
+      case 'Xrotation':
+        euler.x = (node.frames[frame][j] * Math.PI) / 180
+        break
+      case 'Yrotation':
+        euler.y = (node.frames[frame][j] * Math.PI) / 180
+        break
+      case 'Zrotation':
+        euler.z = (node.frames[frame][j] * Math.PI) / 180
+        break
+      default:
+        break
+    }
+  }
+  return new Quaternion().setFromEuler(euler)
 }

@@ -87,6 +87,31 @@ export class BVHNode {
     return nodes
   }
 
+  /**
+   * Compute and return the rotation quaternion for a given frame
+   * @param frame Index of frame
+   * @returns Rotation quaternion
+   */
+  getRotation(frame: number): Quaternion {
+    const euler = new Euler()
+    for (let j = 0; j < this.channels.length; j++) {
+      switch (this.channels[j]) {
+        case 'Xrotation':
+          euler.x = (this.frames[frame][j] * Math.PI) / 180
+          break
+        case 'Yrotation':
+          euler.y = (this.frames[frame][j] * Math.PI) / 180
+          break
+        case 'Zrotation':
+          euler.z = (this.frames[frame][j] * Math.PI) / 180
+          break
+        default:
+          break
+      }
+    }
+    return new Quaternion().setFromEuler(euler)
+  }
+
   toString(): string {
     const iter = (node: BVHNode, indent: string): string[] => {
       let tmp: string[] = [indent + '- ' + node.id]

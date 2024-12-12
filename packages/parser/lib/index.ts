@@ -38,6 +38,16 @@ export function parse(str: string, options: ParseOptions = {}): BVH {
     }
   }
 
+  // Process rotation data and set correct values in BVHNode frames
+  for (const node of bvh.nodeList) {
+    for (let i = 0; i < bvh.numFrames; i++) {
+      const rotation = node.getRotation(i)
+      node.set(i, 'Xrotation', rotation.x)
+      node.set(i, 'Yrotation', rotation.y)
+      node.set(i, 'Zrotation', rotation.z)
+    }
+  }
+
   return bvh
 }
 
