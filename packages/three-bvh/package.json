@@ -8,7 +8,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "vite build",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "Kazumi Inada<hello@nandenjin.com>",
@@ -22,7 +23,8 @@
   "devDependencies": {
     "@types/three": "0.170.0",
     "vite": "6.0.3",
-    "vite-plugin-dts": "4.3.0"
+    "vite-plugin-dts": "4.3.0",
+    "vitest": "2.1.8"
   },
   "peerDependencies": {
     "three": "*",

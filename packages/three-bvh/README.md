@@ -11,3 +11,13 @@ Helper tools to play with BVH data and [three.js](https://threejs.org/)
 # https://www.npmjs.com/package/@nandenjin/three-bvh
 npm i @nandenjin/three-bvh
 ```
+
+## Running Tests
+
+To run the tests for the `three-bvh` package, use the following command:
+
+```sh
+npm test
+```
+
+This will execute the tests using `vitest`.
