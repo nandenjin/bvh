@@ -13,6 +13,7 @@ import {
   Vector3,
   AnimationMixer,
   Clock,
+  GridHelper,
 } from 'three'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
@@ -47,6 +48,8 @@ camera.position.set(100, 100, 100)
 /** Camera controls */
 const control = new OrbitControls(camera, renderer.domElement)
 control.target.set(0, 75, 0)
+
+scene.add(new GridHelper(1000, 10))
 
 /**
  * Handle loading BVH data
