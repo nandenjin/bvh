@@ -63,6 +63,8 @@ const loadData = () => {
   /** Bone from BVH file */
   const bone = createBones(props.bvh)
 
+  console.log('createBones():', bone)
+
   const skeleton = new SkeletonHelper(bone)
   parent.add(bone)
   parent.add(skeleton)
@@ -71,6 +73,8 @@ const loadData = () => {
 
   /** Animation clip from BVH file */
   const clip = createClip(props.bvh)
+
+  console.log('createClip():', clip)
 
   // Play animation
   mixer.clipAction(clip).play()

@@ -4,7 +4,9 @@
     @dragenter="isDragging = true"
     @dragleave="isDragging = false"
     @dragover.prevent
-    @drop.prevent="(isDragging = false), handleDrop($event.dataTransfer?.files)"
+    @drop.prevent="
+      ((isDragging = false), handleDrop($event.dataTransfer?.files))
+    "
   >
     <div class="content">
       <h1>@nandenjin/bvh: Playground</h1>
@@ -24,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import Viewer from './Viewer.vue'
 
 import EXAMPLE_BVH_A from '../../../assets/A_test.bvh?raw'
@@ -37,6 +39,11 @@ const content = ref<string>(EXAMPLE_BVH_A)
 const bvh = computed<BVH | undefined>(() => {
   if (!content.value) return
   return parse(content.value)
+})
+
+watch(bvh, () => {
+  console.info('BVH data updated')
+  console.log('BVH:', bvh.value)
 })
 
 const handleDrop = (files: FileList) => {
