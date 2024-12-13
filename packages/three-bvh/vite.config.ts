@@ -1,10 +1,16 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
+import { alias } from '../../config'
 
 export default defineConfig({
   plugins: [dts()],
   root: __dirname,
+  resolve: {
+    alias: {
+      ...alias,
+    },
+  },
   build: {
     target: 'modules',
     lib: {
