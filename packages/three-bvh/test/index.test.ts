@@ -51,15 +51,15 @@ describe('three-bvh', () => {
     const node = motion.nodeList[0]
     const frameIndex = 0
     const frameTime = motion.frameTime
-    const { times, positions, rotations } = processFrame(
+    const { time, position, rotation } = processFrame(
       node,
       frameIndex,
       frameTime,
     )
 
-    expect(times).toEqual([frameIndex * frameTime])
-    expect(positions).toEqual([0, 0, 0])
-    expect(rotations).toEqual([0, 0, 0, 1])
+    expect(time).toEqual(frameIndex * frameTime)
+    expect(position?.toArray()).toEqual([0, 0, 0])
+    expect(rotation?.toArray()).toEqual([0, 0, 0, 1])
   })
 
   test('processNode should process a node correctly', () => {
