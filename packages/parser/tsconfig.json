@@ -1,10 +1,12 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "target": "ESNext", // This is just for editors, Vite will override this
     "isolatedModules": true,
     "esModuleInterop": true,
     "module": "Preserve",
     "moduleResolution": "bundler"
   },
-  "include": ["**/*.ts", "**/*.vue"]
+  "include": ["**/*.ts", "**/*.vue"],
+  "exclude": ["dist"]
 }

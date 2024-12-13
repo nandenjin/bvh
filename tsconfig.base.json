@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "skipLibCheck": true,
     "paths": {
       "@nandenjin/bvh-parser": ["./packages/parser/lib"],
       "@nandenjin/three-bvh": ["./packages/three-bvh/src"]
