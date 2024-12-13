@@ -52,4 +52,11 @@ export class BVH {
   of(id: string): BVHNode | undefined {
     return this._nodeIndex[id]
   }
+
+  /**
+   * Get duration of the BVH animation in seconds
+   */
+  get duration(): number {
+    return this.numFrames * this.frameTime
+  }
 }
