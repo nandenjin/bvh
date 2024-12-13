@@ -1,13 +1,5 @@
 import type { BVH, BVHNode } from '@nandenjin/bvh-parser'
-import {
-  KeyframeTrack,
-  Bone,
-  Quaternion,
-  Vector3,
-  VectorKeyframeTrack,
-  QuaternionKeyframeTrack,
-  AnimationClip,
-} from 'three'
+import { KeyframeTrack, Bone, AnimationClip } from 'three'
 import { getFrameEnd, processNode } from './processors'
 
 export const createBones = (bvh: BVH) => {
@@ -37,5 +29,5 @@ export const createClip = (bvh: BVH, frameStart = 0, frameEnd = -1) => {
     tracks.push(...nodeTracks)
   }
 
-  return new AnimationClip(undefined, bvh.frameTime, tracks)
+  return new AnimationClip(undefined, bvh.duration, tracks)
 }

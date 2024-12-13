@@ -1,12 +1,28 @@
 import { BVH, BVHNode } from '@nandenjin/bvh-parser'
 import {
   Euler,
+  EulerOrder,
   KeyframeTrack,
   Quaternion,
   QuaternionKeyframeTrack,
   Vector3,
   VectorKeyframeTrack,
 } from 'three'
+
+/**
+ * Convert degrees to radians.
+ */
+const degToRad = (deg: number) => (deg * Math.PI) / 180
+
+/**
+ * Get the rotation order of a BVH node.
+ * @returns EulerOrder for three.js, e.g. `XYZ`
+ */
+const getRotationOrder = (node: BVHNode): EulerOrder =>
+  node.channels
+    .filter((c) => c.match(/^[xyz]rotation$/i))
+    .map((c) => c[0].toUpperCase())
+    .join('') as EulerOrder
 
 /**
  * Returns the end frame of the BVH animation.
@@ -19,43 +35,58 @@ export const getFrameEnd = (bvh: BVH, frameEnd: number): number => {
   return frameEnd === -1 ? bvh.numFrames : frameEnd
 }
 
+type ProcessFrameResult = {
+  time: number
+  position?: Vector3
+  rotation?: Quaternion
+}
+
 /**
  * Processes a single frame of the BVH animation.
  *
  * @param {BVHNode} node - The BVH node containing the frame data.
- * @param {number} frameIndex - The index of the frame to process.
- * @param {number} frameTime - The time duration of each frame.
- * @returns {{ times: number[]; positions: number[]; rotations: number[] }} - An object containing arrays of times, positions, and rotations for the frame.
  */
 export const processFrame = (
   node: BVHNode,
   frameIndex: number,
   frameTime: number,
-): { times: number[]; positions: number[]; rotations: number[] } => {
-  const times: number[] = []
-  const positions: number[] = []
-  const rotations: number[] = []
+) => {
+  const time = frameIndex * frameTime
 
-  times.push(frameIndex * frameTime)
+  const result: ProcessFrameResult = {
+    time,
+  }
 
   const position = new Vector3(node.offsetX, node.offsetY, node.offsetZ)
   const rotation = new Quaternion()
 
-  const xPosition = node.at(frameIndex, 'Xposition')
-  const yPosition = node.at(frameIndex, 'Yposition')
-  const zPosition = node.at(frameIndex, 'Zposition')
-  position.add(new Vector3(xPosition, yPosition, zPosition))
+  try {
+    const xPosition = node.at(frameIndex, 'Xposition')
+    const yPosition = node.at(frameIndex, 'Yposition')
+    const zPosition = node.at(frameIndex, 'Zposition')
+    position.add(new Vector3(xPosition, yPosition, zPosition))
+    result.position = position
+  } catch (e) {}
 
-  const xRotation = node.at(frameIndex, 'Xrotation')
-  const yRotation = node.at(frameIndex, 'Yrotation')
-  const zRotation = node.at(frameIndex, 'Zrotation')
-  rotation.setFromEuler(new Euler(xRotation, yRotation, zRotation, 'XYZ'))
+  try {
+    const xRotation = node.at(frameIndex, 'Xrotation')
+    const yRotation = node.at(frameIndex, 'Yrotation')
+    const zRotation = node.at(frameIndex, 'Zrotation')
+    rotation.setFromEuler(
+      new Euler(
+        degToRad(xRotation),
+        degToRad(yRotation),
+        degToRad(zRotation),
+        getRotationOrder(node),
+      ),
+    )
+    result.rotation = rotation
+  } catch (e) {}
 
-  positions.push(position.x, position.y, position.z)
-  rotations.push(rotation.x, rotation.y, rotation.z, rotation.w)
-
-  return { times, positions, rotations }
+  return result
 }
+
+type ProcessNodeResult = KeyframeTrack[]
 
 /**
  * Processes a BVH node to generate animation tracks.
@@ -71,20 +102,37 @@ export const processNode = (
   frameStart: number,
   frameEnd: number,
   frameTime: number,
-): KeyframeTrack[] => {
-  const tracks: KeyframeTrack[] = []
+): ProcessNodeResult => {
+  if (node.hasEnd) return []
 
-  if (node.hasEnd) return tracks
+  const times: number[] = []
+  const positions: number[] = []
+  const rotations: number[] = []
 
   for (let i = frameStart; i < Math.min(node.frames.length, frameEnd); i++) {
-    const { times, positions, rotations } = processFrame(node, i, frameTime)
-    tracks.push(
-      new VectorKeyframeTrack(`${node.id}.position`, times, positions),
-    )
-    tracks.push(
-      new QuaternionKeyframeTrack(`${node.id}.quaternion`, times, rotations),
+    const {
+      time: t,
+      position: p,
+      rotation: r,
+    } = processFrame(node, i, frameTime)
+    times.push(t)
+    if (p) positions.push(p.x, p.y, p.z)
+    if (r) rotations.push(r.x, r.y, r.z, r.w)
+  }
+
+  const result: ProcessNodeResult = []
+
+  if (positions.length > 0) {
+    result.push(
+      new VectorKeyframeTrack(node.id + '.position', times, positions),
     )
   }
 
-  return tracks
+  if (rotations.length > 0) {
+    result.push(
+      new QuaternionKeyframeTrack(node.id + '.quaternion', times, rotations),
+    )
+  }
+
+  return result
 }
