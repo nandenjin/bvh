@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.7](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.6...three-bvh-v0.2.7) (2024-12-16)
+
+
+### Bug Fixes
+
+* Use rollup-ed d.ts file ([#24](https://github.com/nandenjin/bvh/issues/24)) ([1479718](https://github.com/nandenjin/bvh/commit/14797186811a6aefd1352330349518de1379ee27))
+
 ## [0.2.6](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.5...three-bvh-v0.2.6) (2024-12-16)
 
 
