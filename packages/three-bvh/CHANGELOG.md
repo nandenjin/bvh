@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.6](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.5...three-bvh-v0.2.6) (2024-12-16)
+
+
+### Bug Fixes
+
+* Avoid gimbal lock while parsing rotations ([#14](https://github.com/nandenjin/bvh/issues/14)) ([4ad2f03](https://github.com/nandenjin/bvh/commit/4ad2f03b369cc78364c12750b373eeb68fceaa06))
+
 ## [0.2.5](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.4...three-bvh-v0.2.5) (2024-12-06)
 
 
