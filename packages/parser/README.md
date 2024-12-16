@@ -8,7 +8,7 @@ BVH Parser written in TypeScript
 
 This is a forked version maintained by [`@nandenjin`](https://github.com/nandenjin). Originally written by [`@hitsujiwool`](https://github.com/hitsujiwool).
 
-[🐙 **GitHub**](https://github.com/nandenjin/bvh) | [📒 **Docs**](https://nandenjin.github.io/bvh/modules/_nandenjin_bvh_parser.html) | [⚒️ **Playground**](https://nandenjin.github.io/bvh/playground/)
+[🐙 **GitHub**](https://github.com/nandenjin/bvh) | [📒 **Docs**](https://nandenjin.github.io/bvh/modules/_nandenjin_bvh-parser.html) | [⚒️ **Playground**](https://nandenjin.github.io/bvh/playground/)
 
 ## Usage
 
