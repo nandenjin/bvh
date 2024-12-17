@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.8](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.7...three-bvh-v0.2.8) (2024-12-17)
+
+
+### Bug Fixes
+
+* Compute trimmed duration for `createClip()` ([#26](https://github.com/nandenjin/bvh/issues/26)) ([9e92423](https://github.com/nandenjin/bvh/commit/9e92423b7df7aa0fa3b10f095d6854cae4e8ba7a))
+
 ## [0.2.7](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.6...three-bvh-v0.2.7) (2024-12-16)
 
 
