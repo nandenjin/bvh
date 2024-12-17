@@ -29,5 +29,9 @@ export const createClip = (bvh: BVH, frameStart = 0, frameEnd = -1) => {
     tracks.push(...nodeTracks)
   }
 
-  return new AnimationClip(undefined, bvh.duration, tracks)
+  return new AnimationClip(
+    undefined,
+    bvh.frameTime * (frameEnd - frameStart),
+    tracks,
+  )
 }
