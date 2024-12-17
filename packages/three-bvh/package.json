@@ -1,6 +1,6 @@
 {
   "name": "@nandenjin/three-bvh",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "type": "module",
   "exports": {
     ".": "./dist/index.js"
