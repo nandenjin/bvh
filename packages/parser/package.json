@@ -23,7 +23,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@types/node": "22.10.1",
+    "@types/node": "22.10.2",
     "@vitest/coverage-istanbul": "2.1.8",
     "express": "4.21.2",
     "typedoc": "0.27.3",
