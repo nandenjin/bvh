@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.9](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.8...three-bvh-v0.2.9) (2024-12-19)
+
+
+### Miscellaneous Chores
+
+* Release 0.2.9 ([ceb5f09](https://github.com/nandenjin/bvh/commit/ceb5f0932bb41d595410211e7b8e7433ae5cec29))
+
 ## [0.2.8](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.7...three-bvh-v0.2.8) (2024-12-17)
 
 
