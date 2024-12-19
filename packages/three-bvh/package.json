@@ -29,8 +29,5 @@
   "peerDependencies": {
     "three": "*",
     "@nandenjin/bvh-parser": "^0.2.4"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   }
 }
