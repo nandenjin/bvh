@@ -182,10 +182,6 @@ export class Parser {
   }
 
   private get(): string {
-    if (typeof this._lines[this._lineNumber] === 'undefined') {
-      return ''
-    } else {
-      return this._lines[this._lineNumber].replace(/(^\s+)|(\s+$)/g, '')
-    }
+    return this._lines[this._lineNumber]?.trim() || ''
   }
 }
