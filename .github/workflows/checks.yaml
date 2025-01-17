@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - v1
       - renovate/*
   pull_request:
 
