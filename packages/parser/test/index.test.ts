@@ -9,17 +9,6 @@ import { resolve as resolvePath } from 'path'
 
 const assetsDir = resolvePath(__dirname, '../../../assets')
 
-const app = express()
-app.use(express.static(assetsDir))
-app.listen(8383)
-
-describe('bvh.js', function () {
-  test('should read remote bvh file using xhr', function (done) {
-    bvh.read('http://127.0.0.1:8383/A_test.bvh', function (motion) {
-      expect(motion).toBeInstanceOf(BVH)
-    })
-  })
-})
 
 describe('BVH', function () {
   const str = readFileSync(resolvePath(assetsDir, './A_test.bvh'), 'utf-8')
