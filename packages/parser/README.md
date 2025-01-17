@@ -13,41 +13,43 @@ This is a forked version maintained by [`@nandenjin`](https://github.com/nandenj
 ## Usage
 
 ```javascript
-import { read as readBVH } from '@nandenjin/bvh'
+import { parse as parseBVH } from '@nandenjin/bvh-parser'
 
-readBVH(urlForBVHFile, function (motion) {
-  // basic infomation about motion data
-  motion.frameTime
-  motion.numFrames
+fetch('path/to/your.bvh')
+  .then(response => response.text())
+  .then(bvhData => {
+    const motion = parseBVH(bvhData)
 
-  // get lists of nodes
-  motion.nodeList
+    // basic information about motion data
+    console.log(motion.frameTime)
+    console.log(motion.numFrames)
 
-  // get a node by id
-  var node = motion.of('Head')
+    // get lists of nodes
+    console.log(motion.nodeList)
 
-  // change node's internal state to n-th frame
-  node.at(4)
+    // get a node by id
+    const node = motion.of('Head')
 
-  // you can exchange the order of method "at" and "of"
-  var state = motion.at(4)
-  node = state.of('Head')
+    // change node's internal state to n-th frame
+    console.log(node.at(4, 'Xposition'))
 
-  // node properties
-  node.offsetX
-  node.offsetY
-  node.offsetZ
-  node.rotationX
-  node.rotationY
-  node.rotationZ
+    // you can exchange the order of method "at" and "of"
+    const state = motion
+    console.log(state.of('Head').at(4, 'Xposition'))
 
-  // node adjacent to "End Site" has properties about endOffset
-  if (node.hasEnd) {
-    node.endOffsetX
-    node.endOffsetY
-    node.endOffsetZ
-  }
-})
+    // node properties
+    console.log(node.offsetX)
+    console.log(node.offsetY)
+    console.log(node.offsetZ)
+
+    // node adjacent to "End Site" has properties about endOffset
+    if (node.hasEnd) {
+      console.log(node.endOffsetX)
+      console.log(node.endOffsetY)
+      console.log(node.endOffsetZ)
+    }
+  })
+  .catch(error => console.error('Error fetching BVH data:', error))
 ```
 
 ## License
