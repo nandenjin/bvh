@@ -1,5 +1,7 @@
 import { BVHNode } from './bvh_node'
 
+const REGEX_MULTI_SPACES = new RegExp(/\s+/)
+
 export class Parser {
   private _lines: string[]
   private _lineNumber: number
@@ -25,7 +27,7 @@ export class Parser {
   private expectRoot(): Parser {
     let node: BVHNode
     this.expect('ROOT', (line: string) => {
-      const nodeName = line.split(/\s+/)[1]
+      const nodeName = line.split(REGEX_MULTI_SPACES)[1]
       node = new BVHNode(nodeName)
       this.currentNode = node
     })
@@ -44,7 +46,7 @@ export class Parser {
   private expectJoint(): Parser {
     let node: BVHNode
     this.expect('JOINT', (line: string) => {
-      const nodeName = line.split(/\s+/)[1]
+      const nodeName = line.split(REGEX_MULTI_SPACES)[1]
       node = new BVHNode(nodeName)
       node.parent = this.currentNode
       if (this.currentNode) {
@@ -73,7 +75,7 @@ export class Parser {
   }
 
   private offset(): Parser {
-    const offsets = this.get().split(/\s+/).slice(1)
+    const offsets = this.get().split(REGEX_MULTI_SPACES).slice(1)
     if (offsets.length !== 3)
       throw new Error('Parse error: Invalid offset number.')
     if (this.currentNode) {
@@ -85,7 +87,7 @@ export class Parser {
   }
 
   private endOffset(): Parser {
-    const offsets = this.get().split(/\s+/).slice(1)
+    const offsets = this.get().split(REGEX_MULTI_SPACES).slice(1)
     if (offsets.length !== 3)
       throw new Error('Parse error: Invalid offset number.')
     if (this.currentNode) {
@@ -98,7 +100,7 @@ export class Parser {
   }
 
   private expectChannels(): Parser {
-    const pieces = this.get().split(/\s+/)
+    const pieces = this.get().split(REGEX_MULTI_SPACES)
     const n = parseInt(pieces[1], 10)
     const channels = pieces.slice(2)
     if (n !== channels.length)
@@ -144,7 +146,7 @@ export class Parser {
   }
 
   private expectFrameValues(nodes: BVHNode[]) {
-    const values = this.get().split(/\s+/)
+    const values = this.get().split(REGEX_MULTI_SPACES)
     nodes.forEach((node) => {
       if (values.length < (node.channels?.length ?? 0))
         throw new Error('Parse error: Too short motion values per frame')
@@ -171,7 +173,7 @@ export class Parser {
   private accept(state: string): boolean {
     const line = this.get()
     if (line === '') return false
-    return line.split(/\s+/)[0] == state
+    return line.split(REGEX_MULTI_SPACES)[0] == state
   }
 
   private next(): Parser {
