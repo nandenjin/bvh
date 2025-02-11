@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.11](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.10...three-bvh-v0.2.11) (2025-02-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency three to ^0.173.0 ([f85cfbc](https://github.com/nandenjin/bvh/commit/f85cfbc50910495ee7c3317930f4d4fa7ef5f5cb))
+
 ## [0.2.10](https://github.com/nandenjin/bvh/compare/three-bvh-v0.2.9...three-bvh-v0.2.10) (2025-01-17)
 
 
