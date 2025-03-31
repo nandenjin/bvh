@@ -28,6 +28,6 @@
   "devDependencies": {
     "@types/three": "0.175.0",
     "@vitejs/plugin-vue": "5.2.3",
-    "vite": "6.2.3"
+    "vite": "6.2.4"
   }
 }
