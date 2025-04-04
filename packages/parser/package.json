@@ -27,7 +27,7 @@
     "@vitest/coverage-istanbul": "3.0.9",
     "express": "4.21.2",
     "typedoc": "0.28.1",
-    "vite": "6.2.4",
+    "vite": "6.2.5",
     "vite-plugin-dts": "4.5.3",
     "vitest": "3.0.9"
   },
