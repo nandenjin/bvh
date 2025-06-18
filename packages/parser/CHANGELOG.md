@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.13](https://github.com/nandenjin/bvh/compare/parser-v0.2.12...parser-v0.2.13) (2025-06-18)
+
+
+### Miscellaneous Chores
+
+* **parser:** Synchronize bvh versions
+
 ## [0.2.12](https://github.com/nandenjin/bvh/compare/parser-v0.2.11...parser-v0.2.12) (2025-03-03)
 
 
