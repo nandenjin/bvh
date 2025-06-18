@@ -24,12 +24,12 @@
   },
   "devDependencies": {
     "@types/node": "22.15.32",
-    "@vitest/coverage-istanbul": "3.2.2",
+    "@vitest/coverage-istanbul": "3.2.4",
     "express": "5.1.0",
     "typedoc": "0.28.5",
     "vite": "6.3.5",
     "vite-plugin-dts": "4.5.4",
-    "vitest": "3.2.2"
+    "vitest": "3.2.4"
   },
   "engines": {
     "node": "*"
