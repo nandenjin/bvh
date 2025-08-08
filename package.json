@@ -30,7 +30,7 @@
     "lint-staged": "16.1.4",
     "npm-run-all2": "8.0.4",
     "prettier": "3.6.2",
-    "simple-git-hooks": "2.13.0"
+    "simple-git-hooks": "2.13.1"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
