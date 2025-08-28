@@ -21,7 +21,7 @@ jobs:
         env:
           PLAYGROUND_BASE_PATH: /bvh/playground/
       - run: mkdir docs/playground && cp -r packages/playground/dist/* docs/playground
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: docs
 
