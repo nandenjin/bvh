@@ -23,7 +23,7 @@
   "dependencies": {
     "@vueuse/core": "^13.0.0",
     "three": "^0.179.0",
-    "vue": "3.5.18"
+    "vue": "3.5.20"
   },
   "devDependencies": {
     "@types/three": "0.179.0",
