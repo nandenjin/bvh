@@ -26,7 +26,7 @@
     "@types/node": "22.18.1",
     "@vitest/coverage-istanbul": "3.2.4",
     "express": "5.1.0",
-    "typedoc": "0.28.11",
+    "typedoc": "0.28.12",
     "vite": "6.3.5",
     "vite-plugin-dts": "4.5.4",
     "vitest": "3.2.4"
