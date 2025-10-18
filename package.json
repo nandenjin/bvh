@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/nandenjin/bvh#readme",
   "devDependencies": {
-    "lint-staged": "16.2.3",
+    "lint-staged": "16.2.4",
     "npm-run-all2": "8.0.4",
     "prettier": "3.6.2",
     "simple-git-hooks": "2.13.1"
