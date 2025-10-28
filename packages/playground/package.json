@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/nandenjin/bvh#readme",
   "dependencies": {
-    "@vueuse/core": "^13.0.0",
+    "@vueuse/core": "^14.0.0",
     "three": "^0.179.0",
     "vue": "3.5.22"
   },
